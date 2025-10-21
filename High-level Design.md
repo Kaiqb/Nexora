@@ -1,5 +1,3 @@
-# AI-Driven Business Registration Platform - System Flow Diagram
-
 ```plaintext
                             ┌─────────────────────────────┐
                             │        User Interface       │
@@ -19,4 +17,18 @@
               │                            │                                  │
               ▼                            ▼                                  ▼
  ┌─────────────────────────┐   ┌────────────────────────────┐   ┌──────────────────────────────┐
- │ User Data & Documents   │   │ I
+ │ User Data & Documents   │   │ Integration Manager / APIs │   │   NLU / Entity Extraction    │
+ │ (Profiles, uploads etc.)│   │ (State, IRS, Federal, etc.)│   │  (spaCy, HuggingFace, LLMs) │
+ └────────────┬────────────┘   └────────────┬───────────────┘   └─────────────┬──────────────┘
+              │                            │                                  │
+              ▼                            ▼                                  ▼
+     ┌────────────────────┐     ┌─────────────────────────────┐       ┌─────────────────────────┐
+     │  Database Layer    │     │ External Data Sources / APIs │       │  AI Assistant Engine   │
+     │ (Postgres, MongoDB)│     │ (Gov Portals, IRS, State APIs)│      │ (Chat, Guidance, etc.)│
+     └─────────┬──────────┘     └─────────────────────────────┘       └────────────┬──────────┘
+               │                                                            │
+               ▼                                                            ▼
+     ┌──────────────────────────┐                              ┌────────────────────────────┐
+     │   Analytics & Monitoring │                              │  Admin Dashboard / CMS     │
+     │ (Prometheus, Grafana etc)│                              │ (Logs, Audits, Oversight) │
+     └──────────────────────────┘                              └────────────────────────────┘
